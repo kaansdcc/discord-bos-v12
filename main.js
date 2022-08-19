@@ -6,11 +6,11 @@ require('./util/Loader.js')(client);     //serendia
 
 client.commands = new Discord.Collection(); //serendia
 client.aliases = new Discord.Collection();  //serendia
-fs.readdir('./commands/', (err, files) => { //serend,a
+fs.readdir('./komutlar/', (err, files) => { //serend,a
   if (err) console.error(err);               //serendia
   console.log(`${files.length} komut yüklenecek.`); //serend,a
   files.forEach(f => {                       //serendia
-    let props = require(`./commands/${f}`);   //serendia
+    let props = require(`./komutlar/${f}`);   //serendia
     console.log(`${props.config.name} komutu yüklendi.`);  //serendia
     console.log(`Piece <3 Serendia Squad`)     //serendia
     client.commands.set(props.config.name, props); //serendia
